@@ -21,7 +21,7 @@ const Hero = () => {
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
             <span>
               <Typewriter
-                words={["Professional Coder.", "Developer.", "Frotend Dev."]}
+                words={["Professional Coder.", "SQA Engineer", "Frotend Dev."]}
                 loop
                 cursor
                 cursorStyle="|"
