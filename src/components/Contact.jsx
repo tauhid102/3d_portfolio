@@ -45,17 +45,7 @@ console.log('form', form)
       .then(
         () => {
           setLoading(false);
-          // alert("Thank you. I will get back to you as soon as possible.");
-          toast.success('Thank you. I will get back to you as soon as possible.', {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-            });
+          alert("Thank you. I will get back to you as soon as possible.");
           setForm({
             name: "",
             email: "",
@@ -65,7 +55,6 @@ console.log('form', form)
         (error) => {
           setLoading(false);
           console.error(error);
-
           alert("Ahh, something went wrong. Please try again.");
         }
       );
