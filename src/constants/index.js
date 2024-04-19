@@ -116,31 +116,33 @@ const technologies = [
 
 const experiences = [
   {
+    title: "Associate SQA Engineer",
+    company_name: "Nascenia",
+    icon: creator,
+    iconBg: "#E6DEDD",
+    date: "Oct 2023 - Present",
+    points: [
+      "Performed manual testing on Android fintech apps and website applications.",
+      "API testing documents, release notes, and flow diagrams to streamline testing processes.",
+      "Testing cross-functional teams to identify and resolve software defects, ensuring high product quality.",
+      "Maintain records of test cases, results, and defects for comprehensive reporting and analysis.",
+      "•Product delivery to customers after final testing. Support the client and the development team by understanding the client's needs.",
+    ],
+  },
+  {
     title: "React.js Developer",
     company_name: "Akij Textile Mills Limited",
     icon: starbucks,
     iconBg: "#383E56",
-    date: "Feb 2023 - Present",
+    date: "Feb 2023 - Oct 2023",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
       "Implementing responsive design and ensuring cross-browser compatibility.",
       "Participating in code reviews and providing constructive feedback to other developers.",
     ],
-  },
-  // {
-  //   title: "Full stack Developer",
-  //   company_name: "Learning",
-  //   icon: meta,
-  //   iconBg: "#E6DEDD",
-  //   date: "Jan 2020 - Feb 2023",
-  //   points: [
-  //     "Developing and maintaining web applications using React.js and other related technologies.",
-  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-  //     "Implementing responsive design and ensuring cross-browser compatibility.",
-  //     "Participating in code reviews and providing constructive feedback to other developers.",
-  //   ],
-  // },
+  }
+  
   // {
   //   title: "Web Developer",
   //   company_name: "Shopify",
