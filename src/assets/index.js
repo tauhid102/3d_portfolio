@@ -20,6 +20,14 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
+import postman from "./tech/postman.svg";
+import selenium from "./tech/selenium.svg";
+import cypress from "./tech/cypress.svg";
+import jmeter from "./tech/apachejmeter.svg";
+import jira from "./tech/jira.svg";
+import java from "./tech/java.svg";
+import cucumber from "./tech/cucumber.svg";
+import zephyr from "./tech/zephyr.png";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
@@ -52,6 +60,14 @@ export {
   tailwind,
   typescript,
   threejs,
+  postman,
+  selenium,
+  cypress,
+  jmeter,
+  jira,
+  java,
+  cucumber,
+  zephyr,
   meta,
   shopify,
   starbucks,

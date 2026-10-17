@@ -4,25 +4,20 @@ import {
   creator,
   web,
   javascript,
-  typescript,
-  html,
-  css,
   reactjs,
   redux,
-  tailwind,
-  nodejs,
-  mongodb,
-  git,
   figma,
-  docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
+  postman,
+  selenium,
+  cypress,
+  jmeter,
+  jira,
+  java,
+  cucumber,
+  zephyr,
   carrent,
   jobit,
   tripguide,
-  threejs,
 } from "../assets";
 
 export const navLinks = [
@@ -46,129 +41,126 @@ const services = [
     icon: web,
   },
   {
-    title: "Web Developer",
+    title: "API & Load Testing",
+    icon: backend,
+  },
+  {
+    title: "Test Automation",
     icon: mobile,
   },
   {
     title: "Frontend Developer",
-    icon: backend,
-  },
-  {
-    title: "Wordpress Developer",
     icon: creator,
   },
 ];
 
 const technologies = [
   {
-    name: "HTML 5",
-    icon: html,
+    name: "Postman",
+    icon: postman,
   },
   {
-    name: "CSS 3",
-    icon: css,
+    name: "Selenium",
+    icon: selenium,
+  },
+  {
+    name: "Cypress",
+    icon: cypress,
+  },
+  {
+    name: "JMeter",
+    icon: jmeter,
+  },
+  {
+    name: "Cucumber",
+    icon: cucumber,
+  },
+  {
+    name: "Jira",
+    icon: jira,
+  },
+  {
+    name: "Zephyr",
+    icon: zephyr,
+  },
+  {
+    name: "Java",
+    icon: java,
   },
   {
     name: "JavaScript",
     icon: javascript,
   },
-  // {
-  //   name: "TypeScript",
-  //   icon: typescript,
-  // },
   {
     name: "React JS",
     icon: reactjs,
   },
   {
-    name: "Redux Toolkit",
+    name: "Redux",
     icon: redux,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
-    name: "git",
-    icon: git,
   },
   {
     name: "figma",
     icon: figma,
   },
-  // {
-  //   name: "docker",
-  //   icon: docker,
-  // },
 ];
 
 const experiences = [
   {
-    title: "Associate SQA Engineer",
-    company_name: "Nascenia",
-    icon: creator,
-    iconBg: "#E6DEDD",
-    date: "Oct 2023 - Present",
+    title: "SQA Engineer",
+    company_name: "RedDot Digital Limited",
+    icon: web,
+    iconBg: "#383E56",
+    date: "Nov 2025 - Present",
     points: [
-      "Performed manual testing on Android fintech apps and website applications.",
-      "API testing documents, release notes, and flow diagrams to streamline testing processes.",
-      "Testing cross-functional teams to identify and resolve software defects, ensuring high product quality.",
-      "Maintain records of test cases, results, and defects for comprehensive reporting and analysis.",
-      "•Product delivery to customers after final testing. Support the client and the development team by understanding the client's needs.",
+      "Designed and executed detailed manual test cases based on BRD and Figma requirements for the fintech application.",
+      "Performed API testing using Postman, including request validation, response verification, and status code validation.",
+      "Created and maintained test scenarios, test cases, and test reports in Excel.",
+      "Conducted regression testing, smoke testing, and provided UAT support before production release.",
+      "Conducted USSD testing for MFS applications, ensuring seamless functionality across different user flows and network conditions.",
+      "Validated backend data through database testing, ensuring data integrity and consistency between UI, API, and database.",
+      "Performed end-to-end testing of fintech workflows in MFS (LENDEN), including wallet, merchant, and transaction modules.",
     ],
   },
   {
-    title: "React.js Developer",
-    company_name: "Akij Textile Mills Limited",
-    icon: starbucks,
-    iconBg: "#383E56",
-    date: "Feb 2023 - Oct 2023",
+    title: "QA Engineer",
+    company_name: "Easy Automation Lab (Newark, USA)",
+    icon: mobile,
+    iconBg: "#E6DEDD",
+    date: "May 2025 - Nov 2025",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Automated UI testing using Selenium and Cucumber, enhancing regression coverage.",
+      "Managed test cases via Zephyr and tracked bugs through Jira.",
+      "Collaborated with developers to resolve issues and improve release quality.",
+      "Validated backend data using SQL for end-to-end testing.",
+      "Wrote detailed test cases with individual steps and expected results, making them easy to convert into automation scripts.",
     ],
-  }
-  
-  // {
-  //   title: "Web Developer",
-  //   company_name: "Shopify",
-  //   icon: shopify,
-  //   iconBg: "#383E56",
-  //   date: "Jan 2022 - Jan 2023",
-  //   points: [
-  //     "Developing and maintaining web applications using React.js and other related technologies.",
-  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-  //     "Implementing responsive design and ensuring cross-browser compatibility.",
-  //     "Participating in code reviews and providing constructive feedback to other developers.",
-  //   ],
-  // },
-  // {
-  //   title: "Full stack Developer",
-  //   company_name: "Learning",
-  //   icon: meta,
-  //   iconBg: "#E6DEDD",
-  //   date: "Jan 2023 - Present",
-  //   points: [
-  //     "Developing and maintaining web applications using React.js and other related technologies.",
-  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-  //     "Implementing responsive design and ensuring cross-browser compatibility.",
-  //     "Participating in code reviews and providing constructive feedback to other developers.",
-  //   ],
-  // },
+  },
+  {
+    title: "Associate SQA Engineer",
+    company_name: "Nascenia",
+    icon: backend,
+    iconBg: "#383E56",
+    date: "Oct 2023 - Apr 2025",
+    points: [
+      "Executed comprehensive manual testing for Android fintech applications and web platforms, with hands-on experience in the POCKET app.",
+      "Developed and executed API test scenarios using Postman, while preparing clear and structured release documentation.",
+      "Collaborated closely with developers, product teams, and stakeholders to identify and resolve high-priority defects efficiently.",
+      "Ensured the delivery of stable, high-quality, and client-ready software through rigorous testing and validation processes.",
+    ],
+  },
+  {
+    title: "Frontend Web Developer",
+    company_name: "Akij Textile Mills Limited (Insaf)",
+    icon: creator,
+    iconBg: "#E6DEDD",
+    date: "Jan 2023 - Sep 2023",
+    points: [
+      "Built responsive web apps using React.js, Redux, and REST APIs.",
+      "Developed interactive dashboards with Chart.js for data visualization.",
+      "Ensured cross-browser compatibility and mobile-first design.",
+    ],
+  },
 ];
 
 const testimonials = [
@@ -200,12 +192,12 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Money Testing Transition API (Post Man)",
+    name: "Transactional API Testing",
     description:
-      "The admin will log in to the system, Admin creates an agent and customer, Credit money to the agent from the SYSTEM, The agent will deposit cash to the customer, the Customer withdraws cash from the agent, Customer sends money to any other customer, Agent and customer will check their balance.",
+      "Designed and executed API test cases for a financial transaction system involving agents and customers. Automated the testing with Postman and generated reports via Newman, reducing manual test effort by 40%.",
     tags: [
       {
-        name: "PostMan",
+        name: "Postman",
         color: "blue-text-gradient",
       },
       {
@@ -222,16 +214,16 @@ const projects = [
       "https://github.com/tauhid102/TRANSACTION-api-postman-testing",
   },
   {
-    name: "Load Testing Using JMeter",
+    name: "Load Testing (JMeter)",
     description:
-      "In this project, we will use JMeter to perform load testing on an API. The objective is to simulate high user traffic and identify performance bottlenecks.",
+      "Simulated high-traffic API requests to identify performance bottlenecks, and created load test reports to optimize system efficiency for high-scale transactions.",
     tags: [
       {
         name: "JMeter",
         color: "blue-text-gradient",
       },
       {
-        name: "Report",
+        name: "Load Test Report",
         color: "green-text-gradient",
       },
     ],
@@ -239,9 +231,9 @@ const projects = [
     source_code_link: "https://github.com/tauhid102/Load-Test-Dmoney-Api",
   },
   {
-    name: "Daraz Home and Search Bar Manual Testing",
+    name: "Daraz UI & Search Testing",
     description:
-      "In this project, I am doing manual testing where I have done a test plan, and test cases, and also design a mind map using the Xmind app. I am testing only the home page UI, functionality of the home page, and search bar.",
+      "Conducted manual UI and functionality testing for the Daraz homepage and search. Created test plans, test cases, and mind maps for structured test coverage.",
     tags: [
       {
         name: "Excel Sheet",
