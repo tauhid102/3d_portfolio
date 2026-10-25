@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bgMain" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="40%" stop-color="#6d28d9"/>
+      <stop offset="100%" stop-color="#4c1d95"/>
+    </linearGradient>
+    <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="letterT" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e0d4ff"/>
+    </linearGradient>
+    <linearGradient id="letterR" x1="0" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#c4b5fd"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="glassShine" x1="0.2" y1="0" x2="0.8" y2="0.6">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="edgeLight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c4b5fd" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#7c3aed" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0.3"/>
+    </linearGradient>
+    <filter id="innerShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+      <feOffset dx="0" dy="2" result="offset"/>
+      <feComposite in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadow"/>
+      <feFlood flood-color="#1e1b4b" flood-opacity="0.4"/>
+      <feComposite in2="shadow" operator="in"/>
+      <feComposite in2="SourceGraphic" operator="over"/>
+    </filter>
+    <filter id="textGlow">
+      <feGaussianBlur stdDeviation="3" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="outerGlow">
+      <feGaussianBlur stdDeviation="6" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="circClip">
+      <circle cx="100" cy="100" r="88"/>
+    </clipPath>
+  </defs>
+
+  <!-- Outer glow ring -->
+  <circle cx="100" cy="100" r="98" fill="none" stroke="#915eff" stroke-width="1" opacity="0.3" filter="url(#outerGlow)"/>
+
+  <!-- Outer decorative ring -->
+  <circle cx="100" cy="100" r="96" fill="none" stroke="url(#ringGrad)" stroke-width="2.5"/>
+
+  <!-- Gap ring -->
+  <circle cx="100" cy="100" r="92" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+
+  <!-- Main circle with depth -->
+  <circle cx="100" cy="100" r="88" fill="url(#bgMain)"/>
+  <circle cx="100" cy="100" r="88" fill="url(#bgMain)" filter="url(#innerShadow)"/>
+
+  <!-- Glass shine effect (clipped to circle) -->
+  <g clip-path="url(#circClip)">
+    <ellipse cx="75" cy="55" rx="70" ry="55" fill="url(#glassShine)"/>
+  </g>
+
+  <!-- Inner accent ring -->
+  <circle cx="100" cy="100" r="80" fill="none" stroke="url(#edgeLight)" stroke-width="0.8"/>
+
+  <!-- Subtle grid pattern for texture -->
+  <g clip-path="url(#circClip)" opacity="0.03">
+    <line x1="60" y1="12" x2="60" y2="188" stroke="#fff" stroke-width="0.5"/>
+    <line x1="100" y1="12" x2="100" y2="188" stroke="#fff" stroke-width="0.5"/>
+    <line x1="140" y1="12" x2="140" y2="188" stroke="#fff" stroke-width="0.5"/>
+    <line x1="12" y1="60" x2="188" y2="60" stroke="#fff" stroke-width="0.5"/>
+    <line x1="12" y1="100" x2="188" y2="100" stroke="#fff" stroke-width="0.5"/>
+    <line x1="12" y1="140" x2="188" y2="140" stroke="#fff" stroke-width="0.5"/>
+  </g>
+
+  <!-- T letter with gradient -->
+  <g filter="url(#textGlow)">
+    <rect x="36" y="64" width="54" height="9" rx="4.5" fill="url(#letterT)"/>
+    <rect x="58.5" y="64" width="9" height="66" rx="4.5" fill="url(#letterT)"/>
+  </g>
+
+  <!-- R letter with gradient -->
+  <g filter="url(#textGlow)">
+    <rect x="110" y="64" width="9" height="66" rx="4.5" fill="url(#letterR)"/>
+    <path d="M110 64 L110 64 h20 a18 18 0 0 1 0 28 h-20" fill="none" stroke="url(#letterR)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="128" y1="92" x2="150" y2="130" stroke="url(#letterR)" stroke-width="9" stroke-linecap="round"/>
+  </g>
+
+  <!-- Top-right accent diamond -->
+  <g transform="translate(160, 48) rotate(45)" opacity="0.5">
+    <rect x="-4" y="-4" width="8" height="8" rx="1.5" fill="#c4b5fd"/>
+  </g>
+
+  <!-- Bottom-left accent diamond -->
+  <g transform="translate(40, 152) rotate(45)" opacity="0.3">
+    <rect x="-3" y="-3" width="6" height="6" rx="1" fill="#a78bfa"/>
+  </g>
+
+  <!-- Bottom accent bar -->
+  <rect x="75" y="143" width="50" height="2.5" rx="1.25" fill="rgba(255,255,255,0.1)"/>
+
+  <!-- Tiny sparkle dots -->
+  <circle cx="152" cy="40" r="1.5" fill="#e0d4ff" opacity="0.6"/>
+  <circle cx="48" cy="160" r="1" fill="#c4b5fd" opacity="0.4"/>
+</svg>

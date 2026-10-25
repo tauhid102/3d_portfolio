@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+import logo from "./tr-logo.svg";
 import backend from "./backend.png";
 import creator from "./creator.png";
 import mobile from "./mobile.png";
@@ -33,10 +33,15 @@ import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
+import appinion from "./company/appinion.svg";
+import reddot from "./company/reddot.webp";
+import nascenia from "./company/nascenia.png";
+import easyautomationlab from "./company/easyautomationlab.png";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import orangehrm from "./orangehrm.png";
 
 export {
   logo,
@@ -72,7 +77,12 @@ export {
   shopify,
   starbucks,
   tesla,
+  appinion,
+  reddot,
+  nascenia,
+  easyautomationlab,
   carrent,
   jobit,
   tripguide,
+  orangehrm,
 };

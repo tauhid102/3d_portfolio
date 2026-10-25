@@ -1,12 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
+import { createPortal } from "react-dom";
 import {Tilt} from "react-tilt";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 import { styles } from "../style";
 import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
+
+const ImageModal = ({ image, name, onClose }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className='fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm cursor-pointer'
+      onClick={onClose}
+    >
+      <motion.div
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.8, opacity: 0 }}
+        transition={{ type: "spring", damping: 25, stiffness: 300 }}
+        className='relative max-w-[90vw] max-h-[90vh]'
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          onClick={onClose}
+          className='absolute -top-3 -right-3 z-10 w-8 h-8 rounded-full bg-white text-black flex items-center justify-center text-lg font-bold hover:bg-gray-200 transition-colors'
+        >
+          &times;
+        </button>
+        <img
+          src={image}
+          alt={name}
+          className='max-w-[90vw] max-h-[90vh] object-contain rounded-lg'
+        />
+      </motion.div>
+    </motion.div>
+  );
+};
 
 const ProjectCard = ({
   index,
@@ -15,6 +49,7 @@ const ProjectCard = ({
   tags,
   image,
   source_code_link,
+  onImageClick,
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
@@ -30,7 +65,8 @@ const ProjectCard = ({
           <img
             src={image}
             alt='project_image'
-            className='w-full h-full object-cover rounded-2xl'
+            className='w-full h-full object-cover rounded-2xl cursor-pointer'
+            onClick={() => onImageClick(image, name)}
           />
 
           <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
@@ -68,6 +104,12 @@ const ProjectCard = ({
 };
 
 const Works = () => {
+  const [modalImage, setModalImage] = useState(null);
+
+  const handleImageClick = (image, name) => {
+    setModalImage({ image, name });
+  };
+
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -90,9 +132,27 @@ const Works = () => {
 
       <div className='mt-20 flex flex-wrap gap-7'>
         {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
+          <ProjectCard
+            key={`project-${index}`}
+            index={index}
+            {...project}
+            onImageClick={handleImageClick}
+          />
         ))}
       </div>
+
+      {createPortal(
+        <AnimatePresence>
+          {modalImage && (
+            <ImageModal
+              image={modalImage.image}
+              name={modalImage.name}
+              onClose={() => setModalImage(null)}
+            />
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </>
   );
 };

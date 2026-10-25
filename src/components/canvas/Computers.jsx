@@ -29,29 +29,52 @@ const Computers = ({ isMobile }) => {
   );
 };
 
+const MobileFallback = () => {
+  return (
+    <div className='w-full h-full flex items-center justify-center'>
+      <div className='relative w-[280px] h-[280px] flex items-center justify-center'>
+        <div className='absolute inset-0 rounded-full bg-[#915eff]/10 animate-pulse' />
+        <div className='text-center z-10'>
+          <div className='text-[60px] mb-2'>💻</div>
+          <p className='text-secondary text-[14px]'>
+            SQA Engineer
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isSmallMobile, setIsSmallMobile] = useState(false);
 
   useEffect(() => {
-    // Add a listener for changes to the screen size
     const mediaQuery = window.matchMedia("(max-width: 500px)");
+    const smallQuery = window.matchMedia("(max-width: 640px)");
 
-    // Set the initial value of the `isMobile` state variable
     setIsMobile(mediaQuery.matches);
+    setIsSmallMobile(smallQuery.matches);
 
-    // Define a callback function to handle changes to the media query
     const handleMediaQueryChange = (event) => {
       setIsMobile(event.matches);
     };
+    const handleSmallQueryChange = (event) => {
+      setIsSmallMobile(event.matches);
+    };
 
-    // Add the callback function as a listener for changes to the media query
     mediaQuery.addEventListener("change", handleMediaQueryChange);
+    smallQuery.addEventListener("change", handleSmallQueryChange);
 
-    // Remove the listener when the component is unmounted
     return () => {
       mediaQuery.removeEventListener("change", handleMediaQueryChange);
+      smallQuery.removeEventListener("change", handleSmallQueryChange);
     };
   }, []);
+
+  if (isSmallMobile) {
+    return <MobileFallback />;
+  }
 
   return (
     <Canvas

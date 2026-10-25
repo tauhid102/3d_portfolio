@@ -1,11 +1,11 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
 
 import { styles } from "../style";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
+
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
@@ -17,47 +17,39 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
-    const { target } = e;
-    const { name, value } = target;
-
-    setForm({
-      ...form,
-      [name]: value,
-    });
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
   };
-console.log('form', form)
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    emailjs
-      .send(
-        "service_f895alk",
-        "template_31c2l2n",
-        {
-          name: form.name,
-          to_name:"Tauhidur Rahman",
-          email: form.email,
-          message: form.message,
-        },
-        "jUIi__wrXept_dYPA"
-      )
-      .then(
-        () => {
-          setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
-          alert("Ahh, something went wrong. Please try again.");
-        }
-      );
+    try {
+      const formData = new FormData();
+      formData.append("access_key", "704573ac-5d22-49a4-9780-fd4349883505");
+      formData.append("name", form.name);
+      formData.append("email", form.email);
+      formData.append("message", form.message);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Thank you. I will get back to you as soon as possible.");
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        alert("Error: " + data.message);
+      }
+    } catch (error) {
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

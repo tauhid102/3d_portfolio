@@ -47,13 +47,13 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        I am an SQA Engineer with solid experience in ensuring software quality
-        across web and mobile platforms. I am skilled in designing and executing
-        comprehensive test strategies, including functional, non-functional,
-        regression, and integration testing, with a strong understanding of API
-        validation, UI behavior, and performance considerations. I am
-        experienced in test planning, defect tracking, and data validation, with
-        a focus on delivering reliable and user-friendly applications.
+        SQA Engineer with solid experience in ensuring software quality across
+        web and mobile platforms. Skilled in designing and executing
+        comprehensive test strategies, including functional, nonfunctional,
+        regression, and integration testing. Strong understanding of API
+        validation, UI behavior, and performance considerations. Experienced in
+        test planning, defect tracking, and data validation, with a focus on
+        delivering reliable and user-friendly applications.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">

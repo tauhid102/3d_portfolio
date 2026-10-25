@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <section className="relative w-full h-screen mx-auto">
       <div
-        className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7x1 mx-auto flex flex-row items-start gap-5`}
+        className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7x1 mx-auto flex flex-row items-start gap-5 z-10 pointer-events-none`}
       >
         <div className="flex flex-col justify-center items-center mt-5">
           <div className="w-5 h-5 rounded-full bg-[#915eff]" />
@@ -21,7 +21,13 @@ const Hero = () => {
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
             <span>
               <Typewriter
-                words={["SQA Engineer.", "API Tester.", "Automation Tester.", "Frontend Dev."]}
+                words={[
+                  "SQA Engineer.",
+                  "Test Automation Expert.",
+                  "API Tester.",
+                  "Selenium Specialist.",
+                  "Quality Advocate.",
+                ]}
                 loop
                 cursor
                 cursorStyle="|"
@@ -31,6 +37,33 @@ const Hero = () => {
               />
             </span>
           </p>
+          <button
+            onClick={() => {
+              const link = document.createElement("a");
+              link.href = "/Tauhidur_Rahman_Resume.pdf";
+              link.download = "Tauhidur_Rahman_Resume.pdf";
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            }}
+            className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-[#915eff] hover:bg-[#7c3aed] text-white font-semibold rounded-xl transition-colors shadow-lg shadow-[#915eff]/25 cursor-pointer pointer-events-auto"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 4v12m0 0l-4-4m4 4l4-4M4 18h16"
+              />
+            </svg>
+            Download Resume
+          </button>
         </div>
       </div>
       <ComputersCanvas />

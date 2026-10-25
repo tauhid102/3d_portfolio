@@ -1,10 +1,27 @@
+import { useState, useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
-import {About, Contact,Experience,Feedbacks,Hero,Navbar,Tech,Works,StarsCanvas} from './components';
+import {About, Contact,Experience,Hero,Navbar,Works,Skills,Footer,StarsCanvas} from './components';
+import Preloader from './components/Preloader';
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2500);
+
+    window.addEventListener("load", () => {
+      clearTimeout(timer);
+      setTimeout(() => setLoading(false), 800);
+    });
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <BrowserRouter>
+      <Preloader loading={loading} />
       <div className="relative z-0 bg-primary">
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
           <Navbar/>
@@ -12,13 +29,13 @@ function App() {
         </div>
         <About/>
         <Experience/>
-        <Tech/>
+        <Skills/>
         <Works/>
-        {/* <Feedbacks/> */}
         <div className="relative z-0">
           <Contact/>
           <StarsCanvas/>
         </div>
+        <Footer/>
       </div>
     </BrowserRouter>
   )

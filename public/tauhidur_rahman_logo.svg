@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Tauhidur Rahman — personal resume logo</title>
+  <desc id="desc">A clean navy and blue circular emblem with a resume document icon and the name Tauhidur Rahman.</desc>
+  <defs>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1685f8"/>
+      <stop offset="1" stop-color="#0645b8"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#167bf0"/>
+      <stop offset="1" stop-color="#073d9e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1200" fill="#ffffff"/>
+  <circle cx="600" cy="600" r="470" fill="none" stroke="url(#ring)" stroke-width="28"/>
+  <!-- Resume document -->
+  <path d="M420 300 H665 L760 395 V700 Q760 730 730 730 H420 Q390 730 390 700 V330 Q390 300 420 300 Z"
+        fill="#fff" stroke="#082d69" stroke-width="28" stroke-linejoin="round"/>
+  <path d="M665 300 V365 Q665 395 695 395 H760" fill="none" stroke="url(#blue)" stroke-width="25" stroke-linejoin="round"/>
+  <path d="M665 300 L760 395 H695 Q665 395 665 365 Z" fill="url(#blue)"/>
+  <!-- Profile icon -->
+  <circle cx="495" cy="410" r="39" fill="#082d69"/>
+  <path d="M430 505 C430 465 458 448 495 448 C532 448 560 465 560 505 Q560 520 545 520 H445 Q430 520 430 505 Z" fill="#082d69"/>
+  <!-- Profile details -->
+  <g fill="#082d69">
+    <rect x="585" y="450" width="125" height="21" rx="10.5"/>
+    <rect x="585" y="492" width="125" height="21" rx="10.5"/>
+    <circle cx="450" cy="570" r="14"/>
+    <circle cx="450" cy="620" r="14"/>
+    <circle cx="450" cy="670" r="14"/>
+    <rect x="485" y="558" width="190" height="22" rx="11"/>
+    <rect x="485" y="608" width="165" height="22" rx="11"/>
+    <rect x="485" y="658" width="145" height="22" rx="11"/>
+  </g>
+  <!-- Plus badge -->
+  <circle cx="760" cy="675" r="100" fill="url(#blue)" stroke="#fff" stroke-width="9"/>
+  <path d="M760 622 V728 M707 675 H813" fill="none" stroke="#fff" stroke-width="22" stroke-linecap="round"/>
+  <!-- Name -->
+  <text x="600" y="850" text-anchor="middle" fill="#09234f"
+        font-family="Arial, Helvetica, sans-serif" font-size="66" font-weight="700"
+        textLength="690" lengthAdjust="spacingAndGlyphs">Tauhidur Rahman</text>
+</svg>
