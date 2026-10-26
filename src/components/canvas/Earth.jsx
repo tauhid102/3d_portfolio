@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
@@ -12,7 +12,31 @@ const Earth = () => {
   );
 };
 
+const MobileFallback = () => (
+  <div className='flex items-center justify-center h-full'>
+    <div className='text-center p-8'>
+      <div className='text-6xl mb-4'>🌍</div>
+      <p className='text-secondary text-[14px]'>
+        3D Earth model is optimized for desktop viewing
+      </p>
+    </div>
+  </div>
+);
+
 const EarthCanvas = () => {
+  const [isSmallMobile, setIsSmallMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 640px)");
+    setIsSmallMobile(mediaQuery.matches);
+
+    const handleChange = (e) => setIsSmallMobile(e.matches);
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
+
+  if (isSmallMobile) return <MobileFallback />;
+
   return (
     <Canvas
       shadows
